@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en" >
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sadish Panta — Backend Developer from Nepal</title>
+<meta name="description" content="Sadish Panta is a backend-focused developer from Nepal building APIs, real-time applications and practical web systems with Node.js, Express, MongoDB and Redis." />
+<meta property="og:title" content="Sadish Panta — Backend Developer from Nepal" />
+<meta property="og:description" content="Backend-focused developer from Nepal building APIs, real-time applications and practical web systems." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.15.1/devicon.min.css" />
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+:root{
+  --bg:#F3F0E8;
+  --surface:#FBF9F4;
+  --ink:#161616;
+  --soft:#4F4B45;
+  --muted:#706A61;
+  --line:#CEC6B8;
+  --line-strong:#AEA497;
+  --accent:#B7352C;
+  --accent-dark:#8F2923;
+  --accent-soft:rgba(183,53,44,.11);
+}
+html[data-theme="dark"]{
+  --bg:#141210;
+  --surface:#1D1916;
+  --ink:#F5F0E6;
+  --soft:#B8AEA0;
+  --muted:#91877A;
+  --line:#40362E;
+  --line-strong:#62554A;
+  --accent:#E05A50;
+  --accent-dark:#F0776E;
+  --accent-soft:rgba(224,90,80,.15);
+}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important;}
+}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'Inter',sans-serif;
+  transition:background .25s ease,color .25s ease;
+}
+.font-display{font-family:'Fraunces',serif;}
+.font-mono{font-family:'JetBrains Mono',monospace;}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+a,button{transition:color .2s ease,border-color .2s ease,background .2s ease,transform .2s ease,box-shadow .2s ease;}
+a:hover{color:var(--accent);}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+.devicon-wrap i{font-size:36px;filter:saturate(1.15);transition:transform .2s ease,filter .2s ease;}
+.devicon-wrap:hover i{transform:translateY(-4px) scale(1.06);filter:saturate(1.3);}
+.tech-logo{width:36px;height:36px;object-fit:contain;filter:saturate(1.15);transition:transform .2s ease,filter .2s ease;}
+.devicon-wrap:hover .tech-logo{transform:translateY(-4px) scale(1.06);filter:saturate(1.3);}
+.photo-frame{transform:rotate(-3deg);transition:transform .3s ease;}
+.photo-frame:hover{transform:rotate(-1deg);}
+.backdrop-tilt{transform:rotate(4deg);}
+.section-rule{border-color:var(--line);}
+.project-row{transition:padding .25s ease,background .25s ease;}
+.project-row:hover{padding-left:12px;background:var(--accent-soft);}
+.project-row:hover .project-number{color:var(--accent);}
+.project-link:hover{transform:translateX(4px);}
+.pill{border:1px solid var(--line);background:var(--bg);color:var(--soft);}
+.primary-btn{background:var(--accent);color:#fff;border:1px solid var(--accent);}
+.primary-btn:hover{background:var(--accent-dark);box-shadow:0 9px 24px rgba(183,53,44,.18);transform:translateY(-2px);}
+.ghost-btn:hover{border-color:var(--accent);color:var(--accent);}
+@media(max-width:767px){
+  .project-row:hover{padding-left:5px;}
+}
+
+.linux-dark {
+  display: none;
+}
+
+html[data-theme="dark"] .linux-light {
+  display: none;
+}
+
+html[data-theme="dark"] .linux-dark {
+  display: block;
+}
+</style>
+</head>
+
+<body>
+<header class="sticky top-0 z-40 backdrop-blur border-b" style="background:color-mix(in srgb,var(--bg) 92%,transparent);border-color:var(--line);">
+<nav class="max-w-6xl mx-auto flex items-center justify-between px-6 md:px-8 py-4">
+  <a href="#top" class="font-display font-semibold text-[19px]" style="color:var(--ink)">Sadish Panta</a>
+
+  <div class="hidden md:flex items-center gap-7">
+    <a href="#work" class="font-mono text-[12.5px]" style="color:var(--soft)">Work</a>
+    <a href="#about" class="font-mono text-[12.5px]" style="color:var(--soft)">About</a>
+    <a href="#stack" class="font-mono text-[12.5px]" style="color:var(--soft)">Stack</a>
+    <a href="#contact" class="font-mono text-[12.5px]" style="color:var(--soft)">Contact</a>
+
+    <span class="flex items-center gap-3 ml-3 pl-4 border-l" style="border-color:var(--line)">
+      <a href="https://github.com/BSadish" aria-label="GitHub" style="color:var(--soft)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.1 3.29 9.42 7.86 10.95.57.1.79-.25.79-.55v-2.16c-3.2.7-3.87-1.36-3.87-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11.05 11.05 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.77.11 3.06.74.81 1.18 1.84 1.18 3.1 0 4.43-2.7 5.4-5.27 5.69.41.36.78 1.08.78 2.17v3.22c0 .3.21.66.8.55A10.53 10.53 0 0 0 23.5 12c0-6.27-5.23-11.5-11.5-11.5Z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/sadish-panta-686547237/" aria-label="LinkedIn" style="color:var(--soft)">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.9 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.24h4v14.76h-4V8.24zm7.13 0h3.83v2.02h.05c.53-1 1.85-2.06 3.8-2.06 4.07 0 4.82 2.68 4.82 6.16v8.64h-4v-7.66c0-1.83-.03-4.18-2.55-4.18-2.55 0-2.94 1.99-2.94 4.05v7.79h-4V8.24z"/></svg>
+      </a>
+    </span>
+
+    <button id="themeToggle" aria-label="Toggle dark mode" class="w-9 h-9 rounded-full border flex items-center justify-center" style="border-color:var(--line)">
+      <svg id="iconMoon" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="color:var(--soft)"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+    </button>
+  </div>
+
+  <button id="navToggle" class="md:hidden border rounded-full px-3 py-1.5 font-mono text-[11px]" style="border-color:var(--line)" aria-expanded="false" aria-controls="mob">MENU</button>
+</nav>
+
+<div id="mob" class="hidden md:hidden flex-col border-t" style="border-color:var(--line)">
+  <a href="#work" class="px-6 py-3.5 font-mono text-[13.5px] border-b" style="border-color:var(--line)">Work</a>
+  <a href="#about" class="px-6 py-3.5 font-mono text-[13.5px] border-b" style="border-color:var(--line)">About</a>
+  <a href="#stack" class="px-6 py-3.5 font-mono text-[13.5px] border-b" style="border-color:var(--line)">Stack</a>
+  <a href="#contact" class="px-6 py-3.5 font-mono text-[13.5px] border-b" style="border-color:var(--line)">Contact</a>
+  <button id="themeToggleMobile" class="px-6 py-3.5 font-mono text-[13.5px] text-left">Toggle dark mode</button>
+</div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="pt-10 md:pt-14 pb-24 md:pb-28 max-w-6xl mx-auto px-6 md:px-8">
+  <div class="grid md:grid-cols-[1fr_auto] gap-14 md:gap-20 items-center">
+    <div>
+     <div class="reveal flex items-center gap-3 font-mono text-[14px] tracking-wider mb-6">
+  <span class="w-2 h-2 rounded-full" style="background:var(--accent)"></span>
+
+  <span style="color:var(--accent)">BACKEND DEVELOPER</span>
+
+  <span style="color:var(--muted)">/ NEPAL</span>
+</div>
+
+      <h1 class="reveal font-display font-semibold text-[50px] md:text-[76px] leading-[.98] tracking-[-.02em] max-w-[850px]">
+        Building the systems<br class="hidden md:block" /> behind the interface.
+      </h1>
+
+      <p class="reveal max-w-[60ch] text-[17px] md:text-[18px] leading-relaxed mt-7" style="color:var(--soft)">
+        I'm Sadish Panta, a backend-focused developer interested in APIs, authentication, databases and real-time systems. I like understanding what happens underneath an application — not just making the screen work.
+      </p>
+
+      <div class="reveal flex flex-wrap items-center gap-4 mt-9">
+        <a href="assets/Sadish_Panta_Resume.pdf" class="primary-btn font-mono text-[12.5px] px-6 py-3.5 rounded-full">Download CV</a>
+        <a href="#work" class="ghost-btn font-mono text-[12.5px] px-6 py-3.5 rounded-full border" style="border-color:var(--line)">See the work ↓</a>
+      </div>
+
+      <div class="reveal mt-8 flex flex-wrap gap-x-3 gap-y-2 font-mono text-[11px]"  >
+        <span>Node.js</span>/
+          <span> TypeScript </span>/
+        </span><span>Express</span><span>/</span><span>MongoDB</span><span>/</span><span>Redis</span><span>/</span><span>Socket.IO</span>
+      </div>
+    </div>
+
+    <div class="reveal relative w-[220px] h-[260px] mx-auto md:mx-0 flex-shrink-0">
+      <div class="backdrop-tilt absolute inset-0 rounded-3xl" style="background:var(--surface);border:1px solid var(--line);"></div>
+      <div class="photo-frame absolute inset-0 rounded-3xl border flex items-center justify-center shadow-xl overflow-hidden" style="border-color:var(--line-strong);background:var(--surface);">
+        <img src="assets/profile.png" alt="Sadish Panta" class="w-full h-full object-cover" />
+      </div>
+      <div class="absolute -bottom-5 -left-5 font-mono text-[10px] px-3 py-2 rounded-full border" style="background:var(--surface);border-color:var(--line);color:var(--soft)">
+        CHITWAN → NEPAL
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-rule" />
+
+<!-- WORK -->
+<section id="work" class="py-20 md:py-24 max-w-6xl mx-auto px-6 md:px-8">
+  <div class="reveal flex items-baseline justify-between flex-wrap gap-4 mb-12">
+    <div>
+      <div class="font-mono text-[11px] tracking-wider mb-2" style="color:var(--accent)">01 / SELECTED WORK</div>
+      <h2 class="font-display font-semibold text-[34px] md:text-[40px]">Things I've built.</h2>
+    </div>
+    <span class="font-mono text-[11px]" style="color:var(--muted)">Projects over promises.</span>
+  </div>
+
+  <div class="border-t" style="border-color:var(--line)">
+    <article class="project-row reveal grid md:grid-cols-[70px_1fr_220px] gap-5 md:gap-8 py-8 border-b" style="border-color:var(--line)">
+      <div class="project-number font-mono text-[12px] transition-colors">01</div>
+      <div>
+        <div class="font-mono text-[10px] uppercase tracking-wider mb-2" style="color:var(--accent)">REAL-TIME COMMUNICATION</div>
+        <h3 class="font-display font-semibold text-[29px]">ChatFlow</h3>
+        <p class="max-w-[62ch] mt-3 text-[14px] leading-relaxed" style="color:var(--soft)">
+          A real-time chat backend built to understand persistent connections, rooms and event-driven communication — with authentication, messaging, presence and typing indicators across REST and Socket.IO.
+        </p>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <span class="pill font-mono text-[10px] rounded-full px-3 py-1">Node.js</span>
+          <span class="pill font-mono text-[10px] rounded-full px-3 py-1">Express</span>
+          <span class="pill font-mono text-[10px] rounded-full px-3 py-1">MongoDB</span>
+          <span class="pill font-mono text-[10px] rounded-full px-3 py-1">Socket.IO</span>
+          <span class="pill font-mono text-[10px] rounded-full px-3 py-1">Redis</span>
+          <span class="pill font-mono text-[10px] rounded-full px-3 py-1">JWT</span>
+          <span class="pill font-mono text-[10px] rounded-full px-3 py-1">Docker</span>
+        </div>
+      </div>
+     <div class="md:text-left md:pl-8 flex md:block items-center justify-between mt-2 md:mt-0">
+        <div class="font-mono text-[10px] uppercase tracking-wider" style="color:var(--muted)">Focus</div>
+        <div class="font-display text-[16px] mt-1">Real-time architecture</div>
+        <a href="https://github.com/BSadish/chatFlow-Api" class="project-link inline-block font-mono text-[11px] mt-5" style="color:var(--accent)">Source Code ↗</a>
+      </div>
+    </article>
+
+    <article class="project-row reveal grid md:grid-cols-[70px_1fr_220px] gap-5 md:gap-8 py-8 border-b" style="border-color:var(--line)">
+      <div class="project-number font-mono text-[12px] transition-colors">02</div>
+      <div>
+        <div class="font-mono text-[10px] uppercase tracking-wider mb-2" style="color:var(--accent)">CONTENT MANAGEMENT API</div>
+        <h3 class="font-display font-semibold text-[29px]">DevBlog</h3>
+        <p class="max-w-[62ch] mt-3 text-[14px] leading-relaxed" style="color:var(--soft)">
+          A blogging API covering authentication, publishing, search, pagination, comments, likes, bookmarks, image uploads, rate limiting and Redis caching.
+        </p>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <span class="pill font-mono text-[10px] rounded-full px-3 py-1">Node.js</span>
+          <span class="pill font-mono text-[10px] rounded-full px-3 py-1">Express</span>
+          <span class="pill font-mono text-[10px] rounded-full px-3 py-1">MongoDB</span>
+          <span class="pill font-mono text-[10px] rounded-full px-3 py-1">Redis</span>
+          <span class="pill font-mono text-[10px] rounded-full px-3 py-1">JWT</span>
+          <span class="pill font-mono text-[10px] rounded-full px-3 py-1">Cloudinary</span>
+        </div>
+      </div>
+      <div class="md:text-left md:pl-8 flex md:block items-center justify-between mt-2 md:mt-0">
+        <div class="font-mono text-[10px] uppercase tracking-wider" style="color:var(--muted)">Focus</div>
+        <div class="font-display text-[16px] mt-1">API architecture</div>
+        <a href="https://github.com/BSadish/DevBlog" class="project-link inline-block font-mono text-[11px] mt-5" style="color:var(--accent)">Source Code ↗</a>
+      </div>
+    </article>
+
+    <article class="project-row reveal grid md:grid-cols-[70px_1fr_220px] gap-5 md:gap-8 py-8" >
+      <div class="project-number font-mono text-[12px] transition-colors">03</div>
+      <div>
+        <div class="font-mono text-[10px] uppercase tracking-wider mb-2" style="color:var(--accent)">ONLINE FOOD ORDERING</div>
+        <h3 class="font-display font-semibold text-[29px]">FoodHub</h3>
+        <p class="max-w-[62ch] mt-3 text-[14px] leading-relaxed" style="color:var(--soft)">
+          A practical full-stack ordering system built around browsing, cart, checkout and database-backed order workflows.
+        </p>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <span class="pill font-mono text-[10px] rounded-full px-3 py-1">JavaScript</span>
+          <span class="pill font-mono text-[10px] rounded-full px-3 py-1">PHP</span>
+          <span class="pill font-mono text-[10px] rounded-full px-3 py-1">HTML</span>
+          <span class="pill font-mono text-[10px] rounded-full px-3 py-1">CSS</span>
+          <span class="pill font-mono text-[10px] rounded-full px-3 py-1">SQL</span>
+        </div>
+      </div>
+     <div class="md:text-left md:pl-8 flex md:block items-center justify-between mt-2 md:mt-0">
+        <div class="font-mono text-[10px] uppercase tracking-wider" style="color:var(--muted)">Focus</div>
+        <div class="font-display text-[16px] mt-1">Application workflows</div>
+        <a href="https://github.com/BSadish/Online-Food-Ordering-System" class="project-link inline-block font-mono text-[11px] mt-5" style="color:var(--accent)">Source Code ↗</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<hr class="section-rule" />
+
+<!-- ABOUT -->
+<section id="about" class="py-20 md:py-24 max-w-6xl mx-auto px-6 md:px-8">
+  <div class="grid md:grid-cols-[.8fr_1.2fr] gap-12 md:gap-24">
+    <div class="reveal">
+      <div class="font-mono text-[11px] tracking-wider mb-2" style="color:var(--accent)">02 / ABOUT</div>
+      <h2 class="font-display font-semibold text-[34px] md:text-[40px]">How I work.</h2>
+    </div>
+
+    <div>
+      <p class="reveal font-display text-[23px] leading-snug">
+        I enjoy the part of software that sits underneath the interface — where requests become logic, data becomes useful, and separate systems have to communicate reliably.
+      </p>
+      <p class="reveal text-[15px] leading-relaxed mt-6 max-w-[65ch]" style="color:var(--soft)">
+        I'm currently focused on Node.js and the JavaScript ecosystem while going deeper into backend architecture, database design, caching, authentication and real-time systems. Most of my learning happens by building projects and then digging into why they work — or why they broke.
+      </p>
+
+      <div class="reveal grid sm:grid-cols-3 gap-6 mt-12 pt-7 border-t" style="border-color:var(--line)">
+        <div>
+          <div class="font-mono text-[10px] tracking-wider" style="color:var(--muted)">BASED IN</div>
+          <div class="font-display text-[17px] mt-1">Nepal</div>
+        </div>
+        <div>
+          <div class="font-mono text-[10px] tracking-wider" style="color:var(--muted)">FOCUS</div>
+          <div class="font-display text-[17px] mt-1">Backend engineering</div>
+        </div>
+        <div>
+          <div class="font-mono text-[10px] tracking-wider" style="color:var(--muted)">CURRENTLY</div>
+          <div class="font-display text-[17px] mt-1">Learning system design</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-rule" />
+
+<!-- STACK -->
+<section id="stack" class="py-20 md:py-24 max-w-6xl mx-auto px-6 md:px-8">
+  <div class="reveal flex items-baseline justify-between flex-wrap gap-4 mb-10">
+    <div>
+      <div class="font-mono text-[11px] tracking-wider mb-2" style="color:var(--accent)">03 / TOOLBOX</div>
+      <h2 class="font-display font-semibold text-[34px] md:text-[40px]">What I use.</h2>
+    </div>
+    <span class="font-mono text-[11px]" style="color:var(--muted)">Tools I actually build with.</span>
+  </div>
+
+  <div class="reveal grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-x-5 gap-y-8 py-8 border-y" style="border-color:var(--line)">
+    <div class="devicon-wrap flex flex-col items-center gap-2.5"><i class="devicon-nodejs-plain colored"></i><span class="font-mono text-[10px]" style="color:var(--soft)">Node.js</span></div>
+    <div class="devicon-wrap flex flex-col items-center gap-2.5">
+  <i class="devicon-typescript-plain colored"></i>
+  <span class="font-mono text-[10px]" style="color:var(--soft)">TypeScript</span>
+</div>
+<div class="devicon-wrap flex flex-col items-center gap-2.5">
+  <i class="devicon-react-original colored"></i>
+  <span class="font-mono text-[10px]" style="color:var(--soft)">React</span>
+</div>
+    <div class="devicon-wrap flex flex-col items-center gap-2.5"><i class="devicon-express-original"></i><span class="font-mono text-[10px]" style="color:var(--soft)">Express</span></div>
+    <div class="devicon-wrap flex flex-col items-center gap-2.5"><i class="devicon-mongodb-plain colored"></i><span class="font-mono text-[10px]" style="color:var(--soft)">MongoDB</span></div>
+    <div class="devicon-wrap flex flex-col items-center gap-2.5"><i class="devicon-redis-plain colored"></i><span class="font-mono text-[10px]" style="color:var(--soft)">Redis</span></div>
+    <div class="devicon-wrap flex flex-col items-center gap-2.5"><i class="devicon-socketio-original"></i><span class="font-mono text-[10px]" style="color:var(--soft)">Socket.IO</span></div>
+    <div class="devicon-wrap flex flex-col items-center gap-2.5"><i class="devicon-docker-plain colored"></i><span class="font-mono text-[10px]" style="color:var(--soft)">Docker</span></div>
+    <div class="devicon-wrap flex flex-col items-center gap-2.5"><i class="devicon-javascript-plain colored"></i><span class="font-mono text-[10px]" style="color:var(--soft)">JavaScript</span></div>
+    <div class="devicon-wrap flex flex-col items-center gap-2.5"><i class="devicon-git-plain colored"></i><span class="font-mono text-[10px]" style="color:var(--soft)">Git</span></div>
+    
+<div class="devicon-wrap flex flex-col items-center gap-2.5">
+  <picture>
+    <source
+      srcset="assets/linux.png"
+      media="(prefers-color-scheme: dark)"
+    >
+
+    <img
+      src="assets/linux.png"
+      alt="Linux Tux"
+      class="tech-logo linux-logo"
+    >
+  </picture>
+
+  <span class="font-mono text-[10px]" style="color:var(--soft)">Linux</span>
+</div>
+
+    <div class="devicon-wrap flex flex-col items-center gap-2.5">
+      <img src="https://cdn.simpleicons.org/postman/FF6C37" alt="Postman" class="tech-logo" />
+      <span class="font-mono text-[10px]" style="color:var(--soft)">Postman</span>
+    </div>
+  </div>
+
+  <div class="reveal grid md:grid-cols-4 gap-x-10 gap-y-8 mt-12">
+    <div>
+      <div class="font-mono text-[10px] tracking-wider mb-3" style="color:var(--accent)">BACKEND</div>
+      <div class="font-display text-[17px] leading-relaxed">Node.js<br> TypeScript <br>Express.js<br>MongoDB / Mongoose</div>
+    </div>
+    <div>
+      <div class="font-mono text-[10px] tracking-wider mb-3" style="color:var(--accent)">REAL-TIME & INFRA</div>
+      <div class="font-display text-[17px] leading-relaxed">Socket.IO<br>Redis<br>Docker</div>
+    </div>
+    <div>
+      <div class="font-mono text-[10px] tracking-wider mb-3" style="color:var(--accent)">AUTH & STORAGE</div>
+      <div class="font-display text-[17px] leading-relaxed">JWT / bcrypt<br>Cloudinary / Multer</div>
+    </div>
+    <div>
+      <div class="font-mono text-[10px] tracking-wider mb-3" style="color:var(--accent)">TOOLS</div>
+      <div class="font-display text-[17px] leading-relaxed">Git / GitHub<br>Linux<br>Postman</div>
+    </div>
+  </div>
+
+  <div class="reveal mt-14 grid sm:grid-cols-2 gap-x-12 gap-y-7 border-t pt-8" style="border-color:var(--line)">
+    <div>
+      <span class="font-mono text-[11px]" style="color:var(--accent)">01</span>
+      <span class="font-semibold ml-3">API design</span>
+      <p class="text-[13.5px] mt-2" style="color:var(--soft)">Consistent REST APIs with authentication, validation and predictable error handling.</p>
+    </div>
+    <div>
+      <span class="font-mono text-[11px]" style="color:var(--accent)">02</span>
+      <span class="font-semibold ml-3">Real-time features</span>
+      <p class="text-[13.5px] mt-2" style="color:var(--soft)">Event-driven features with Socket.IO — rooms, presence, typing and live updates.</p>
+    </div>
+    <div>
+      <span class="font-mono text-[11px]" style="color:var(--accent)">03</span>
+      <span class="font-semibold ml-3">Caching & performance</span>
+      <p class="text-[13.5px] mt-2" style="color:var(--soft)">Using Redis deliberately for caching and rate-limiting workloads.</p>
+    </div>
+    <div>
+      <span class="font-mono text-[11px]" style="color:var(--accent)">04</span>
+      <span class="font-semibold ml-3">Currently learning</span>
+      <p class="text-[13.5px] mt-2" style="color:var(--soft)">JavaScript internals, backend architecture and system design.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="section-rule" />
+
+<!-- CONTACT -->
+<section id="contact" class="py-20 md:py-28 max-w-6xl mx-auto px-6 md:px-8">
+  <div class="grid md:grid-cols-[.8fr_1.2fr] gap-12 md:gap-24">
+    <div class="reveal">
+      <div class="font-mono text-[11px] tracking-wider mb-2" style="color:var(--accent)">04 / CONTACT</div>
+      <h2 class="font-display font-semibold text-[38px] md:text-[52px] leading-tight">Let's build<br>something useful.</h2>
+    </div>
+
+    <div class="reveal">
+      <p class="text-[16px] leading-relaxed max-w-[55ch]" style="color:var(--soft)">
+        I'm open to backend internships, junior opportunities, interesting projects and conversations about engineering.
+      </p>
+
+      <div class="mt-10 border-t" style="border-color:var(--line)">
+        <div class="flex justify-between items-center gap-5 py-5 border-b" style="border-color:var(--line)">
+          <div>
+            <div class="font-mono text-[10px] tracking-wider" style="color:var(--muted)">EMAIL</div>
+            <div class="font-mono text-[14px] mt-1">sadishpanta404@gmail.com</div>
+          </div>
+          <a href="" id="mailBtn" class="ghost-btn project-link font-mono text-[11px] px-4 py-2 rounded-full border" style="border-color:var(--line)">Email ↗</a>
+        </div>
+
+        <div class="flex justify-between items-center gap-5 py-5 border-b" style="border-color:var(--line)">
+          <div>
+            <div class="font-mono text-[10px] tracking-wider" style="color:var(--muted)">GITHUB</div>
+            <div class="font-mono text-[14px] mt-1">github.com/BSadish</div>
+          </div>
+          <a href="https://github.com/BSadish" class="ghost-btn project-link font-mono text-[11px] px-4 py-2 rounded-full border" style="border-color:var(--line)">Visit ↗</a>
+        </div>
+
+        <div class="flex justify-between items-center gap-5 py-5 border-b" style="border-color:var(--line)">
+          <div>
+            <div class="font-mono text-[10px] tracking-wider" style="color:var(--muted)">LINKEDIN</div>
+            <div class="font-mono text-[14px] mt-1">linkedin.com/in/sadish-panta</div>
+          </div>
+          <a href="https://www.linkedin.com/in/sadish-panta-686547237/" class="ghost-btn project-link font-mono text-[11px] px-4 py-2 rounded-full border" style="border-color:var(--line)">Visit ↗</a>
+        </div>
+      </div>
+
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="assets/Sadish_Panta_Resume.pdf" class="primary-btn font-mono text-[12px] px-6 py-3.5 rounded-full">Download CV</a>
+        <span class="font-mono text-[10px] self-center" style="color:var(--muted)">OPEN TO INTERNSHIPS / JUNIOR ROLES</span>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="border-t py-8" style="border-color:var(--line)">
+  <div class="max-w-6xl mx-auto px-6 md:px-8 flex justify-between items-center flex-wrap gap-3.5 font-mono text-[11px]" style="color:var(--muted)">
+    <span>Sadish Panta · Backend Developer, Nepal</span>
+    <div class="flex gap-4">
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <span>© <span id="year"></span></span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
