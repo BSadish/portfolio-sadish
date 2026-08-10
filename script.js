@@ -12,15 +12,20 @@ document.getElementById('year').textContent = new Date().getFullYear();
   document.getElementById('themeToggle').innerHTML = dark ? sunIcon : moonIcon;
 }
 
+// Defult set as dartk theme
 let isDark = true;
 
 setTheme(isDark);
 
-document.getElementById('themeToggle').addEventListener('click', () => {
-  isDark = !isDark;
-  setTheme(isDark);
-});
 
+
+
+
+
+document.getElementById('themeToggle').addEventListener('click', () => {
+    isDark = !isDark;
+  setTheme(isDark);
+  });
 document.getElementById('themeToggleMobile').addEventListener('click', () => {
   isDark = !isDark;
   setTheme(isDark);
